@@ -1,48 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+	@apply  text-slate-900 dark:text-slate-200;
 }
 
 html {
 	@apply scroll-smooth;
-  }
-  
-  @layer components {
+}
+
+a {
+	@apply text-blue-600 dark:text-red-950 underline
+}
+@layer components {
 	.btn-primary {
 	  @apply py-2 px-4 
-	  bg-blue-300 dark:bg-red-800 
-	  text-black dark:text-white
+	  bg-blue-300 dark:bg-rose-950 
+	  text-slate-900 dark:text-slate-200
 	  font-semibold rounded-lg shadow-md 
-	  hover:bg-blue-700 dark:hover:bg-red-600
+	  hover:bg-blue-700 dark:hover:bg-rose-900
 	  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
 	}
-  
-	.section-commons {
-	  @apply h-screen py-20
-	  text-black dark:text-white;
-	}
-
-  }
+}
