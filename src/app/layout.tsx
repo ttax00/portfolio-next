@@ -1,21 +1,21 @@
-import './globals.css'
+import './globals.css';
 
 export const metadata = {
-  title: 'Portfolio',
-  description: 'Work-oriented landing page using beta nextjs app router',
-  icons: {
-	icon:"/icon.jpg"
-  }
-}
+	title: 'Portfolio',
+	description: 'Work-oriented landing page using beta nextjs app router',
+	icons: {
+		icon: "/icon.png"
+	}
+};
 
 export default function RootLayout({
-  children,
+	children,
 }: {
-  children: React.ReactNode
+	children: React.ReactNode;
 }) {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  )
+	return (
+		<html lang="en">
+			<body>{children}</body>
+		</html>
+	);
 }
