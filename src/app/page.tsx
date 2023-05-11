@@ -1,6 +1,6 @@
 import { DarkModeToggle } from "./clientComponents";
 import Image from "next/image";
-import { GitHubSVG, ObsidianSVG, TypeScriptSVG } from "./svgIcons";
+import { GitHubSVG, LinkedInSVG, ObsidianSVG, TypeScriptSVG } from "./svgIcons";
 
 export default function Home() {
 	return <>
@@ -30,8 +30,8 @@ function Section({ id, children }: { id: string, children: JSX.Element; }) {
 
 function NavBar() {
 	return <>
-		<nav className="mx-auto px-2 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-3 gap-2 bg-slate-500 dark:bg-slate-800">
-			<div className="relative flex items-center justify-start h-16 col-span-1 md:col-span-2">
+		<nav className="mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-3 gap-2 bg-slate-500 dark:bg-slate-800">
+			<div className="relative flex items-center justify-start h-16 col-span-2">
 				<a href="#introduction" className="text-blue-900 dark:text-red-800 font-bold no-underline">Portfolio</a>
 				<DarkModeToggle />
 				<div className="h-8 w-8 relative filter dark:invert ml-4">
@@ -62,7 +62,7 @@ function NavBar() {
 function DownArrow({ id }: { id: string; }) {
 	return <div className="self-center motion-safe:animation delay-3s hover:animate-bounce mt-8">
 		<a href={`#${id}`}>
-			<div className="h-24 w-24 relative" >
+			<div className="h-14 w-14 md:h-24 md:w-24 relative" >
 				<Image fill src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Arrow-down.svg"
 					alt="scroll down" />
 			</div>
@@ -72,10 +72,10 @@ function DownArrow({ id }: { id: string; }) {
 
 function Introduction() {
 	return <div className="flex flex-col justify-center h-full w-full">
-		<div className="grid grid-cols-3 content-center ">
+		<div className="grid grid-cols-2 md:grid-cols-3 content-center ">
 			<div className="flex flex-col justify-center col-span-2">
 				<p className="text-3xl sm:text-5xl md:text-7xl text-blue-600 dark:text-rose-950 mt-10">Greetings!</p>
-				<p className="md:text-4xl mt-4">I am Tech, a versatile and adaptable self-taught developer, skilled in multiple programming languages.</p>
+				<p className="md:text-4xl mt-4">I am Bach Nguyen, a versatile and adaptable self-taught developer, skilled in multiple programming languages.</p>
 				<p className="text-left mt-4 text-sm md:text-xl">
 					My focus is on projects that prioritize solving problems using efficient, reliable, and maintainable practices.
 					Currently, I am actively engaged in mastering <a href="https://www.rust-lang.org/" className="text-blue-600 font-bold dark:text-rose-950">{"Rust"}</a>{"."}, a cutting-edge and bleed-responsibly language that aligns perfectly with my interests.
@@ -143,7 +143,7 @@ function ObsidianS3() {
 							<TypeScriptSVG />
 						</a>
 					</li>
-					<li className="h-8 w-8 mr-4 mt-4 md:mt-0 hover:scale-125 transition dark:invert">
+					<li className="h-8 w-8 mr-4 hover:scale-125 transition dark:invert">
 						<a href="https://github.com/TechTheAwesome/obsidian-s3">
 							<GitHubSVG />
 						</a>
@@ -155,7 +155,7 @@ function ObsidianS3() {
 					</li>
 				</ul>
 			</div>
-			<div className="relative w-full h-full mt-4 sm:mt-0 mr-10 transition hover:scale-110">
+			<div className="relative w-full h-full mt-4 md:mt-0 transition hover:scale-110">
 				<Image fill className="object-contain" src="/obsidian-s3.gif" alt="code yew example" />
 			</div>
 		</div>
@@ -164,11 +164,17 @@ function ObsidianS3() {
 }
 
 function Footer() {
-	return <footer className="flex flex-col items-center justify-center bg-gray-500 dark:bg-gray-800 pb-8 pt-6">
-		<ul>
+	return <footer className="flex flex-col items-center justify-center bg-gray-500 dark:bg-gray-800 pb-2 pt-4">
+		<ul className="flex flex-row space-x-4 items-center justify-center">
 			<li className="h-10 w-10 hover:scale-125 transition dark:invert">
 				<a href="https://github.com/TechTheAwesome">
 					<GitHubSVG />
+				</a>
+
+			</li>
+			<li className="h-10 w-10 hover:scale-125 transition dark:invert">
+				<a href="https://www.linkedin.com/in/nguyen-chi-bach/">
+					<LinkedInSVG />
 				</a>
 			</li>
 		</ul>
