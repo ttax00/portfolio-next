@@ -155,7 +155,7 @@ function ObsidianS3() {
 				</ul>
 			</div>
 			<div className="relative w-full h-full mt-4 sm:mt-0 mr-10 transition hover:scale-110">
-				<Image fill className="object-contain" src="/code-yew.gif" alt="code yew example" />
+				<Image fill className="object-contain" src="/obsidian-s3.gif" alt="code yew example" />
 			</div>
 		</div>
 		<DownArrow id="technologies" />
@@ -163,7 +163,7 @@ function ObsidianS3() {
 }
 
 function Footer() {
-	return <footer className="flex flex-row items-center justify-center bg-gray-500 dark:bg-gray-800 pb-8 pt-6">
+	return <footer className="flex flex-col items-center justify-center bg-gray-500 dark:bg-gray-800 pb-8 pt-6">
 		<ul>
 			<li className="h-10 w-10 hover:scale-125 transition dark:invert">
 				<a href="https://github.com/TechTheAwesome">
@@ -171,6 +171,7 @@ function Footer() {
 				</a>
 			</li>
 		</ul>
+		<div className="mt-2">Bach Nguyen © 2023</div>
 	</footer>;
 }
 
