@@ -75,16 +75,12 @@ function Introduction() {
 		<div className="grid grid-cols-2 md:grid-cols-3 content-center ">
 			<div className="flex flex-col justify-center col-span-2">
 				<p className="text-3xl sm:text-5xl md:text-7xl text-blue-600 dark:text-rose-950 mt-10">Greetings!</p>
-				<p className="md:text-4xl mt-4">I am Bach Nguyen, a versatile and adaptable self-taught developer, skilled in multiple programming languages.</p>
+				<p className="md:text-4xl mt-4">I am Bach Nguyen, a passionate and adaptable OSS developer.</p>
 				<p className="text-left mt-4 text-sm md:text-xl">
-					My focus is on projects that prioritize solving problems using efficient, reliable, and maintainable practices.
-					Currently, I am actively engaged in mastering <a href="https://www.rust-lang.org/" className="text-blue-600 font-bold dark:text-rose-950">{"Rust"}</a>{"."}, a cutting-edge and bleed-responsibly language that aligns perfectly with my interests.
+					Motivated and passionate about implementing efficient, reliable, and maintainable practices to solve problems.
+					<br />
+					Currently, I am pursuing mastery in <a href="https://www.rust-lang.org/" className="text-blue-600 font-bold dark:text-rose-950">{"Rust"}</a>{"."}, a strict and memory-safe language that aligns perfectly with my interests.
 				</p>
-				{/* <div className="motion-safe:animation delay-3s fade-in self-start mt-8">
-					<a className="btn-primary block" href="https://github.com/TechTheAwesome">
-						Explore my projects on github!
-					</a>
-				</div> */}
 			</div>
 		</div>
 
