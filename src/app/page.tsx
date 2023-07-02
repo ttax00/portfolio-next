@@ -17,6 +17,9 @@ export default function Home() {
 			<Section id="obsidian-s3">
 				<ObsidianS3 />
 			</Section>
+			<Section id="contacts">
+				<Contacts />
+			</Section>
 		</main >
 		<Footer />
 	</>;
@@ -42,15 +45,15 @@ function NavBar() {
 					<Image fill sizes="100% 100%" src="/moon-svgrepo-com.svg" alt="Night mode" />
 				</div>
 			</div>
-			<div>
+			<div className="px-4">
 				<ul className="flex flex-row justify-center place-items-center h-full w-full space-x-8 title-color text-xl underline ">
 					<a href="#introduction" className="text-center hover:scale-110 transition">Introduction</a>
 					<a href="#code-yew" className="text-center hover:scale-110 transition" >Projects</a>
-					<a href="" className="text-center hover:scale-110 transition">Contact</a>
+					<a href="#contacts" className="text-center hover:scale-110 transition">Contact</a>
 				</ul>
 			</div>
 			<div className="relative hidden sm:flex items-center justify-end">
-				<div className="mr-3">Powered by:</div>
+				<div className="mr-3 hidden md:flex">Powered by:</div>
 				<ul className=" flex flex-row items-center">
 					<li className="mr-3 w-16 hover:scale-110 transition">
 						<a className="filter relative dark:invert"
@@ -173,21 +176,50 @@ function ObsidianS3() {
 	</div>;
 }
 
+function Contacts() {
+	return <div className="flex flex-col justify-center h-full">
+		<div className="w-full">
+			<p className="md:text-5xl text-3xl mt-4 text-center title-color">Contacts</p>
+		</div>
+		<div className="flex flex-col lg:flex-row lg:space-y-0 lg:space-x-8 space-x-0 space-y-8 justify-center lg:items-start items-center pt-10">
+			<div className="relative transition md:m-0 mt-4">
+				<p className="md:text-4xl text-2xl mt-4 text-center ">Info</p>
+
+				<ul className="space-y-2 flex flex-col justify-center place-items-start pt-10">
+					<p>Location: Tokyo, Japan</p>
+					<p>Email: root.bachnc@gmail.com</p>
+					<ul className="flex flex-row space-x-4 items-center justify-center">
+						<li className="h-10 w-10 hover:scale-125 transition dark:invert">
+							<a href="https://github.com/TechTheAwesome">
+								<GitHubSVG />
+							</a>
+
+						</li>
+						<li className="h-10 w-10 hover:scale-125 transition dark:invert">
+							<a href="https://www.linkedin.com/in/nguyen-chi-bach/">
+								<LinkedInSVG />
+							</a>
+						</li>
+					</ul>
+				</ul>
+			</div>
+			<div className="flex flex-col">
+				<p className="md:text-4xl text-2xl mt-4 ">Get in touch with me!</p>
+				<form className="flex flex-col space-y-2">
+					<input type="text" placeholder="Name" className="form-input" />
+					<input type="text" placeholder="Email" className="form-input" />
+					<textarea name="" id="" cols={30} rows={5} placeholder="Message" className="form-input"></textarea>
+					<button>Submit</button>
+				</form>
+			</div>
+
+		</div>
+	</div>;
+}
+
 function Footer() {
 	return <footer className="flex flex-col items-center justify-center bg-gray-500 dark:bg-gray-800 pb-2 pt-4">
-		<ul className="flex flex-row space-x-4 items-center justify-center">
-			<li className="h-10 w-10 hover:scale-125 transition dark:invert">
-				<a href="https://github.com/TechTheAwesome">
-					<GitHubSVG />
-				</a>
 
-			</li>
-			<li className="h-10 w-10 hover:scale-125 transition dark:invert">
-				<a href="https://www.linkedin.com/in/nguyen-chi-bach/">
-					<LinkedInSVG />
-				</a>
-			</li>
-		</ul>
 		<div className="mt-2">Bach Nguyen © 2023</div>
 	</footer>;
 }
