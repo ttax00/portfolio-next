@@ -1,6 +1,7 @@
 import { DarkModeToggle } from "./clientComponents";
 import Image from "next/image";
 import { GitHubSVG, LinkedInSVG, ObsidianSVG, TypeScriptSVG } from "./svgIcons";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
 	return <>
@@ -132,7 +133,7 @@ function CodeYew() {
 
 					</li>
 					<li className="relative h-8 w-8 hover:scale-125 transition">
-						<a href="https://marketplace.visualstudio.com/items?itemName=TechTheAwesome.rust-yew">
+						<a href="https://marketplace.visualstudio.com/items?itemName=TechTheAwesome.rust-yew" className="">
 							<Image fill sizes="100% 100%" src="/vscode.png" alt="vscode marketplace"></Image>
 						</a>
 					</li>
@@ -205,11 +206,11 @@ function Contacts() {
 			</div>
 			<div className="flex flex-col">
 				<p className="md:text-4xl text-2xl mt-4 ">Get in touch with me!</p>
-				<form className="flex flex-col space-y-2">
-					<input type="text" placeholder="Name" className="form-input" />
-					<input type="text" placeholder="Email" className="form-input" />
-					<textarea name="" id="" cols={30} rows={5} placeholder="Message" className="form-input"></textarea>
-					<button>Submit</button>
+				<form className="flex flex-col space-y-2" action="/api/contact" method="post" target="">
+					<input id="name" type="text" name="name" placeholder="Name" className="form-input" required />
+					<input id="email" type="text" name="email" placeholder="Email" className="form-input" required />
+					<textarea id="message" name="message" cols={30} rows={5} placeholder="Message" className="form-input" required></textarea>
+					<Button type="submit" id="submit">Button</Button>
 				</form>
 			</div>
 
