@@ -78,12 +78,12 @@ function Introduction() {
 	return <div className="flex flex-col justify-center h-full w-full">
 		<div className="grid grid-cols-2 md:grid-cols-3 content-center ">
 			<div className="flex flex-col justify-center col-span-2">
-				<p className="text-3xl sm:text-5xl md:text-7xl text-blue-600 dark:text-red-600 mt-10">Greetings!</p>
+				<p className="text-3xl sm:text-5xl md:text-7xl title-color mt-10">Greetings!</p>
 				<p className="md:text-4xl mt-4">I am Bach Nguyen, a curious and passionate OSS contributor.</p>
 				<p className="text-left mt-4 text-sm md:text-xl">
 					Motivated.
 					<br />
-					Currently, I am pursuing mastery in <a href="https://www.rust-lang.org/" className="text-blue-600 font-bold dark:text-red-600">{"Rust"}</a>{"."}, a strict and memory-safe language that aligns perfectly with my interests.
+					Currently, I am pursuing mastery in <a href="https://www.rust-lang.org/" className="title-color font-bold">{"Rust"}</a>{"."}, a strict and memory-safe language that aligns perfectly with my interests.
 				</p>
 			</div>
 		</div>
@@ -95,8 +95,11 @@ function Introduction() {
 
 function CodeYew() {
 	return <div className="flex flex-col justify-center h-full">
+		<div className="w-full">
+			<p className="md:text-5xl text-3xl mt-4 text-center title-color">Projects</p>
+		</div>
 		<div className="flex flex-col-reverse md:flex-row justify-center items-center h-full">
-			<div className="relative w-full h-full transition hover:scale-110 md:m-0 mt-4">
+			<div className="relative w-full h-full transition md:m-0 mt-4">
 				<Image fill sizes="100% 100%" className="object-contain" src="/code-yew.gif" alt="code yew example" />
 			</div>
 			<div className="flex flex-col justify-center items-start md:pl-10">
@@ -133,7 +136,7 @@ function CodeYew() {
 
 function ObsidianS3() {
 	return <div className="flex flex-col justify-center h-full">
-		<div className="flex flex-col md:flex-row justify-center items-center h-full">
+		<div className="flex flex-col md:flex-row justify-center items-center h-full md:pt-10 pt-4">
 			<div className="flex flex-col justify-center items-start md:pr-10">
 				<p className="md:text-4xl text-2xl mt-4">S3 attachments storage</p>
 				<p className="mt-4">An Obsidian Plugin for Streamlined Storage and Retrieval of Media Attachments on S3-Compatible Services.</p>
@@ -155,7 +158,7 @@ function ObsidianS3() {
 					</li>
 				</ul>
 			</div>
-			<div className="relative w-full h-full mt-4 md:mt-0 transition hover:scale-110">
+			<div className="relative w-full h-full mt-4 md:mt-0 transition">
 				<Image fill sizes="100% 100%" className="object-contain" src="/obsidian-s3.gif" alt="code yew example" />
 			</div>
 		</div>

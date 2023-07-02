@@ -81,5 +81,9 @@
   html {
 	@apply scroll-smooth
   }
+
+  .title-color{
+	@apply text-blue-600 dark:text-red-600
+  }
 }
 
