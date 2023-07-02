@@ -7,7 +7,7 @@ export default function Home() {
 		<header className="fixed z-10 w-screen ">
 			<NavBar />
 		</header>
-		<main className="bg-slate-100 flex flex-col bg-gradient-to-br from-slate-200 to-slate-400 dark:from-slate-700 dark:to-rose-900">
+		<main className=" flex flex-col bg-slate-200 dark:bg-slate-700 dark:bg-opacity-80">
 			<Section id="introduction">
 				<Introduction />
 			</Section>
@@ -17,7 +17,7 @@ export default function Home() {
 			<Section id="obsidian-s3">
 				<ObsidianS3 />
 			</Section>
-		</main>
+		</main >
 		<Footer />
 	</>;
 }
@@ -30,12 +30,16 @@ function Section({ id, children }: { id: string, children: JSX.Element; }) {
 
 function NavBar() {
 	return <>
-		<nav className="mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-3 gap-2 bg-slate-500 dark:bg-slate-800">
+		<nav className="mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-3 gap-2 bg-slate-400 dark:bg-slate-800">
 			<div className="relative flex items-center justify-start h-16 col-span-2">
-				<a href="#introduction" className="text-blue-900 dark:text-red-800 font-bold no-underline">Portfolio</a>
+				<a href="#introduction"
+					className="text-black dark:text-white font-bold no-underline w-10 h-10 relative"
+				>
+					<Image fill sizes="100% 100%" src="/icon.png" alt="icon"></Image>
+				</a>
 				<DarkModeToggle />
 				<div className="h-8 w-8 relative filter dark:invert ml-4">
-					<Image fill src="/moon-svgrepo-com.svg" alt="Night mode" />
+					<Image fill sizes="100% 100%" src="/moon-svgrepo-com.svg" alt="Night mode" />
 				</div>
 			</div>
 			<div className="relative hidden sm:flex items-center justify-end">
@@ -63,7 +67,7 @@ function DownArrow({ id }: { id: string; }) {
 	return <div className="self-center motion-safe:animation delay-3s hover:animate-bounce mt-8">
 		<a href={`#${id}`}>
 			<div className="h-14 w-14 md:h-24 md:w-24 relative" >
-				<Image fill src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Arrow-down.svg"
+				<Image fill sizes="100% 100%" src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Arrow-down.svg"
 					alt="scroll down" />
 			</div>
 		</a>
@@ -74,12 +78,12 @@ function Introduction() {
 	return <div className="flex flex-col justify-center h-full w-full">
 		<div className="grid grid-cols-2 md:grid-cols-3 content-center ">
 			<div className="flex flex-col justify-center col-span-2">
-				<p className="text-3xl sm:text-5xl md:text-7xl text-blue-600 dark:text-rose-950 mt-10">Greetings!</p>
-				<p className="md:text-4xl mt-4">I am Bach Nguyen, a passionate and adaptable OSS developer.</p>
+				<p className="text-3xl sm:text-5xl md:text-7xl text-blue-600 dark:text-red-600 mt-10">Greetings!</p>
+				<p className="md:text-4xl mt-4">I am Bach Nguyen, a curious and passionate OSS contributor.</p>
 				<p className="text-left mt-4 text-sm md:text-xl">
-					Motivated and passionate about implementing efficient, reliable, and maintainable practices to solve problems.
+					Motivated.
 					<br />
-					Currently, I am pursuing mastery in <a href="https://www.rust-lang.org/" className="text-blue-600 font-bold dark:text-rose-950">{"Rust"}</a>{"."}, a strict and memory-safe language that aligns perfectly with my interests.
+					Currently, I am pursuing mastery in <a href="https://www.rust-lang.org/" className="text-blue-600 font-bold dark:text-red-600">{"Rust"}</a>{"."}, a strict and memory-safe language that aligns perfectly with my interests.
 				</p>
 			</div>
 		</div>
@@ -93,7 +97,7 @@ function CodeYew() {
 	return <div className="flex flex-col justify-center h-full">
 		<div className="flex flex-col-reverse md:flex-row justify-center items-center h-full">
 			<div className="relative w-full h-full transition hover:scale-110 md:m-0 mt-4">
-				<Image fill className="object-contain" src="/code-yew.gif" alt="code yew example" />
+				<Image fill sizes="100% 100%" className="object-contain" src="/code-yew.gif" alt="code yew example" />
 			</div>
 			<div className="flex flex-col justify-center items-start md:pl-10">
 				<p className="md:text-4xl text-2xl mt-4">Rust-Yew</p>
@@ -116,7 +120,7 @@ function CodeYew() {
 					</li>
 					<li className="relative h-8 w-8 hover:scale-125 transition">
 						<a href="https://marketplace.visualstudio.com/items?itemName=TechTheAwesome.rust-yew">
-							<Image fill src="/vscode.png" alt="vscode marketplace"></Image>
+							<Image fill sizes="100% 100%" src="/vscode.png" alt="vscode marketplace"></Image>
 						</a>
 					</li>
 				</ul>
@@ -152,7 +156,7 @@ function ObsidianS3() {
 				</ul>
 			</div>
 			<div className="relative w-full h-full mt-4 md:mt-0 transition hover:scale-110">
-				<Image fill className="object-contain" src="/obsidian-s3.gif" alt="code yew example" />
+				<Image fill sizes="100% 100%" className="object-contain" src="/obsidian-s3.gif" alt="code yew example" />
 			</div>
 		</div>
 		<DownArrow id="technologies" />

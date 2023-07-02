@@ -9,10 +9,5 @@ export function DarkModeToggle() {
 			document.documentElement.className = checked ? "dark" : "";
 			setDark(checked);
 		}} />
-		{/* <input type="checkbox" role="switch" checked={dark} 
-		onChange={() =>{
-			document.documentElement.className = !dark? "dark" : "";
-			setDark(!dark);
-		}} /> */}
 	</div>;
 }
