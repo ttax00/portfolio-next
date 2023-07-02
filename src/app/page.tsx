@@ -31,7 +31,7 @@ function Section({ id, children }: { id: string, children: JSX.Element; }) {
 function NavBar() {
 	return <>
 		<nav className="mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-3 gap-2 bg-slate-400 dark:bg-slate-800">
-			<div className="relative flex items-center justify-start h-16 col-span-2">
+			<div className="relative flex items-center justify-start h-16">
 				<a href="#introduction"
 					className="text-black dark:text-white font-bold no-underline w-10 h-10 relative"
 				>
@@ -41,6 +41,13 @@ function NavBar() {
 				<div className="h-8 w-8 relative filter dark:invert ml-4">
 					<Image fill sizes="100% 100%" src="/moon-svgrepo-com.svg" alt="Night mode" />
 				</div>
+			</div>
+			<div>
+				<ul className="flex flex-row justify-center place-items-center h-full w-full space-x-8 title-color text-xl underline ">
+					<a href="#introduction" className="text-center hover:scale-110 transition">Introduction</a>
+					<a href="#code-yew" className="text-center hover:scale-110 transition" >Projects</a>
+					<a href="" className="text-center hover:scale-110 transition">Contact</a>
+				</ul>
 			</div>
 			<div className="relative hidden sm:flex items-center justify-end">
 				<div className="mr-3">Powered by:</div>
@@ -83,7 +90,7 @@ function Introduction() {
 				<p className="text-left mt-4 text-sm md:text-xl">
 					Motivated.
 					<br />
-					Currently, I am pursuing mastery in <a href="https://www.rust-lang.org/" className="title-color font-bold">{"Rust"}</a>{"."}, a strict and memory-safe language that aligns perfectly with my interests.
+					Currently, I am pursuing mastery in <a href="https://www.rust-lang.org/" className="title-color font-bold">{"Rust"}</a>, a strict and memory-safe language that aligns perfectly with my interests.
 				</p>
 			</div>
 		</div>
@@ -98,11 +105,11 @@ function CodeYew() {
 		<div className="w-full">
 			<p className="md:text-5xl text-3xl mt-4 text-center title-color">Projects</p>
 		</div>
-		<div className="flex flex-col-reverse md:flex-row justify-center items-center h-full">
+		<div className="flex flex-col-reverse lg:flex-row justify-center items-center h-full">
 			<div className="relative w-full h-full transition md:m-0 mt-4">
 				<Image fill sizes="100% 100%" className="object-contain" src="/code-yew.gif" alt="code yew example" />
 			</div>
-			<div className="flex flex-col justify-center items-start md:pl-10">
+			<div className="flex flex-col justify-center items-start lg:pl-10">
 				<p className="md:text-4xl text-2xl mt-4">Rust-Yew</p>
 				<p className="mt-4">A Feature-Rich VSCode Extension for Syntax Highlighting and Enhanced Language Support for Yew HTML Macro in Rust.</p>
 				<ul className="flex flex-row flex-wrap space-x-4 mt-4 justify-center items-start md:items-center">
@@ -136,8 +143,8 @@ function CodeYew() {
 
 function ObsidianS3() {
 	return <div className="flex flex-col justify-center h-full">
-		<div className="flex flex-col md:flex-row justify-center items-center h-full md:pt-10 pt-4">
-			<div className="flex flex-col justify-center items-start md:pr-10">
+		<div className="flex flex-col lg:flex-row justify-center items-center h-full md:pt-10 pt-4">
+			<div className="flex flex-col justify-center items-start lg:pr-10 lg-pb-0 pb-10 ">
 				<p className="md:text-4xl text-2xl mt-4">S3 attachments storage</p>
 				<p className="mt-4">An Obsidian Plugin for Streamlined Storage and Retrieval of Media Attachments on S3-Compatible Services.</p>
 				<ul className="flex flex-row flex-wrap mt-4 justify-center items-start md:items-center">
