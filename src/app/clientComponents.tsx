@@ -94,7 +94,7 @@ export function ContactForm({ className }: { className: string; }) {
 						<FormControl>
 							<Textarea
 								placeholder="Tell me a little bit about yourself"
-								className="bg-white"
+								className=""
 								{...field}
 							/>
 						</FormControl>

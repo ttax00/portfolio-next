@@ -1,8 +1,7 @@
 import { DarkModeToggle, ContactForm, NavDropDown } from "./clientComponents";
 import Image from "next/image";
-import { GitHubSVG, LinkedInSVG, ObsidianSVG, TypeScriptSVG } from "./svgIcons";
+import { GitHubSVG, LinkedInSVG, ObsidianSVG, RustSVG, TypeScriptSVG } from "./svgIcons";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@radix-ui/react-separator";
 
 export default function Home() {
 	return <>
@@ -166,21 +165,44 @@ function ObsidianS3() {
 }
 
 function MultiProjects() {
-	function Cards({ title, desc, src, target }: { title: string, desc: string, src: string, target: string; }) {
+	function Cards({ title, desc, src, target, children }: { title: string, desc: string, src: string, target: string, children?: JSX.Element | JSX.Element[]; }) {
 		return <a href={target}>
-			<li className="h-64 w-60 m-2 bg-slate-400 hover:bg-slate-300 transition shadow p-2 flex flex-col justify-center items-center">
+			<li className="h-[18rem] w-60 m-2 bg-slate-400 hover:bg-slate-300 transition p-2 flex flex-col justify-center items-center rounded hover:scale-105">
 				<div className="h-36 w-full m-2 relative">
 					<Image fill sizes="100% 100%" className="object-contain" src={src} alt="vscode marketplace"></Image>
 				</div>
 				<p className="text-center text-xl">{title}</p>
-				<p className="text-center text-sm">{desc}</p>
+				<p className="text-center text-sm pb-2">{desc}</p>
+				<div className="flex flex-row justify-center w-full">{children}</div>
 			</li>
 		</a>;
 	}
 
 	return <div className="flex flex-col justify-center h-full">
-		<ul className="flex flex-col flex-wrap lg:flex-row justify-center items-start h-full md:pt-10 pt-4">
-			<Cards title="HolidayAPI-Rust" desc="Holiday API wraper library written in rust" src="/vscode.png" target="https://github.com/TechTheAwesome/holidayapi-rust" />
+		<p className="text-center sm:text-4xl text-2xl mt-4 md:mt-8">Minor projects</p>
+		<ul className="flex flex-row flex-wrap justify-center items-start h-full md:pt-10 pt-4">
+			<Cards title="HolidayAPI-Rust"
+				desc="Holiday API wraper library written in rust."
+				src="/holiday-api-icon.svg"
+				target="https://github.com/TechTheAwesome/holidayapi-rust" >
+				<GitHubSVG className="h-6 w-6 relative transition dark:invert" href="" />
+				<RustSVG className="h-6 w-6 ml-2 relative transition dark:invert" href="" />
+			</Cards>
+			<Cards title="HolidayAPI CLI"
+				desc="Command line interface to interact with Holiday API."
+				src="/terminal-icon.png"
+				target="https://github.com/TechTheAwesome/holidayapi-cli" >
+				<GitHubSVG className="h-6 w-6 relative transition dark:invert" href="" />
+				<RustSVG className="h-6 w-6 ml-2 relative transition dark:invert" href="" />
+			</Cards>
+
+			<Cards title="Portfolio NextJS"
+				desc="Checkout this website source code!"
+				src="/website-icon.png"
+				target="https://github.com/TechTheAwesome/portfolio-next" >
+				<GitHubSVG className="h-6 w-6 relative transition dark:invert" href="" />
+				<TypeScriptSVG className="h-6 w-6 ml-2 relative transition dark:invert" href="" />
+			</Cards>
 		</ul>
 		<DownArrow id="contacts" />
 	</div>;
