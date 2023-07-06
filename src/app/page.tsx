@@ -31,7 +31,7 @@ export default function Home() {
 }
 
 function Section({ id, children }: { id: string, children: JSX.Element; }) {
-	return <section id={`${id}`} className="h-full md:h-screen py-20  px-8 sm:px-12 lg:px-32">
+	return <section id={`${id}`} className="h-full sm:h-screen py-20  px-8 sm:px-12 lg:px-32">
 		{children}
 	</section>;
 }
@@ -39,7 +39,7 @@ function Section({ id, children }: { id: string, children: JSX.Element; }) {
 function NavBar() {
 	return <>
 		<nav className="mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-3 gap-2 bg-slate-400 dark:bg-slate-800">
-			<div className="relative flex items-center justify-start h-16">
+			<div className="relative flex items-center justify-start h-12 md:h-16">
 				<a href="#introduction"
 					className="text-black dark:text-white font-bold no-underline w-10 h-10 relative"
 				>
@@ -115,7 +115,7 @@ function CodeYew() {
 			<p className="md:text-5xl text-3xl mt-4 text-center title-color">Projects</p>
 		</div>
 		<div className="flex flex-col-reverse lg:flex-row justify-center items-center h-full">
-			<div className="relative w-full h-full transition md:m-0 mt-4">
+			<div className="relative h-64 w-64 sm:h-full sm:w-full transition md:m-0 mt-4">
 				<Image fill sizes="100% 100%" className="object-contain" src="/code-yew.gif" alt="code yew example" />
 			</div>
 			<div className="flex flex-col justify-center items-start lg:pl-10">
@@ -126,17 +126,8 @@ function CodeYew() {
 						{/* eslint-disable-next-line @next/next/no-img-element */}
 						<img src="https://img.shields.io/visual-studio-marketplace/i/TechTheAwesome.rust-yew?style=for-the-badge" alt="Install count" />
 					</li>
-					<li className="h-8 w-8 hover:scale-125 transition">
-						<a href="">
-							<TypeScriptSVG />
-						</a>
-					</li>
-					<li className="h-8 w-8 hover:scale-125 transition dark:invert">
-						<a href="https://github.com/TechTheAwesome/code-yew-server">
-							<GitHubSVG />
-						</a>
-
-					</li>
+					<TypeScriptSVG className="h-8 w-8 hover:scale-125 transition" href="" />
+					<GitHubSVG className="h-8 w-8 hover:scale-125 transition dark:invert" href="https://github.com/TechTheAwesome/code-yew-server" />
 					<li className="relative h-8 w-8 hover:scale-125 transition">
 						<a href="https://marketplace.visualstudio.com/items?itemName=TechTheAwesome.rust-yew" className="">
 							<Image fill sizes="100% 100%" src="/vscode.png" alt="vscode marketplace"></Image>
@@ -157,16 +148,8 @@ function ObsidianS3() {
 				<p className="md:text-4xl text-2xl mt-4">S3 attachments storage</p>
 				<p className="mt-4">An Obsidian Plugin for Streamlined Storage and Retrieval of Media Attachments on S3-Compatible Services.</p>
 				<ul className="flex flex-row flex-wrap mt-4 justify-center items-start md:items-center">
-					<li className="h-8 w-8 mr-4 hover:scale-125 transition">
-						<a href="">
-							<TypeScriptSVG />
-						</a>
-					</li>
-					<li className="h-8 w-8 mr-4 hover:scale-125 transition dark:invert">
-						<a href="https://github.com/TechTheAwesome/obsidian-s3">
-							<GitHubSVG />
-						</a>
-					</li>
+					<TypeScriptSVG className="h-8 w-8 mr-4 hover:scale-125 transition" href="" />
+					<GitHubSVG className="h-8 w-8 mr-4 hover:scale-125 transition dark:invert" href="https://github.com/TechTheAwesome/obsidian-s3" />
 					<li className="h-8 w-8 hover:scale-125 transition">
 						<a href="https://obsidian.md">
 							<ObsidianSVG />
@@ -174,7 +157,7 @@ function ObsidianS3() {
 					</li>
 				</ul>
 			</div>
-			<div className="relative w-full h-full mt-4 md:mt-0 transition">
+			<div className="relative h-64 w-64 sm:h-full sm:w-full mt-4 sm:mt-0 transition">
 				<Image fill sizes="100% 100%" className="object-contain" src="/obsidian-s3.gif" alt="code yew example" />
 			</div>
 		</div>
@@ -183,10 +166,22 @@ function ObsidianS3() {
 }
 
 function MultiProjects() {
-	return <div className="flex flex-col justify-center h-full">
-		<div className="flex flex-col lg:flex-row justify-center items-center h-full md:pt-10 pt-4">
+	function Cards({ title, desc, src, target }: { title: string, desc: string, src: string, target: string; }) {
+		return <a href={target}>
+			<li className="h-64 w-60 m-2 bg-slate-400 hover:bg-slate-300 transition shadow p-2 flex flex-col justify-center items-center">
+				<div className="h-36 w-full m-2 relative">
+					<Image fill sizes="100% 100%" className="object-contain" src={src} alt="vscode marketplace"></Image>
+				</div>
+				<p className="text-center text-xl">{title}</p>
+				<p className="text-center text-sm">{desc}</p>
+			</li>
+		</a>;
+	}
 
-		</div>
+	return <div className="flex flex-col justify-center h-full">
+		<ul className="flex flex-col flex-wrap lg:flex-row justify-center items-start h-full md:pt-10 pt-4">
+			<Cards title="HolidayAPI-Rust" desc="Holiday API wraper library written in rust" src="/vscode.png" target="https://github.com/TechTheAwesome/holidayapi-rust" />
+		</ul>
 		<DownArrow id="contacts" />
 	</div>;
 }
@@ -203,12 +198,7 @@ function Contacts() {
 					<p>Location: Tokyo, Japan</p>
 					<p>Email: root.bachnc@gmail.com</p>
 					<ul className="flex flex-row space-x-4 items-center justify-center">
-						<li className="h-6 w-6 hover:scale-125 transition dark:invert">
-							<a href="https://github.com/TechTheAwesome">
-								<GitHubSVG />
-							</a>
-
-						</li>
+						<GitHubSVG className="h-6 w-6 hover:scale-125 transition dark:invert" href="https://github.com/TechTheAwesome" />
 						<li className="h-6 w-6 hover:scale-125 transition dark:invert">
 							<a href="https://www.linkedin.com/in/nguyen-chi-bach/">
 								<LinkedInSVG />
