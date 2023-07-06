@@ -20,7 +20,7 @@ export function DarkModeToggle() {
 }
 
 
-export function ContactForm() {
+export function ContactForm({ className }: { className: string; }) {
 	const schema = z.object({
 		name: z.string().min(2, "Your name must be at least 2 characters."),
 		email: z.string().email("You must enter a valid email"),
@@ -38,7 +38,7 @@ export function ContactForm() {
 	}
 
 	return <Form {...form}>
-		<form onSubmit={form.handleSubmit(onSubmit)} action="" className="flex flex-col space-y-1 mt-6">
+		<form onSubmit={form.handleSubmit(onSubmit)} action="" className={className}>
 			<FormField
 				control={form.control}
 				name="name"

@@ -2,6 +2,7 @@ import { DarkModeToggle, ContactForm } from "./clientComponents";
 import Image from "next/image";
 import { GitHubSVG, LinkedInSVG, ObsidianSVG, TypeScriptSVG } from "./svgIcons";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@radix-ui/react-separator";
 
 export default function Home() {
 	return <>
@@ -183,7 +184,6 @@ function Contacts() {
 		<div className="flex flex-col lg:flex-row lg:space-y-0 lg:space-x-16 space-x-0 space-y-8 justify-center lg:items-start items-center pt-10">
 			<div className="relative transition md:m-0 mt-4">
 				<p className="md:text-4xl text-2xl mt-4 text-center ">Info</p>
-
 				<ul className="space-y-2 flex flex-col justify-center place-items-start pt-10">
 					<p>Location: Tokyo, Japan</p>
 					<p>Email: root.bachnc@gmail.com</p>
@@ -204,7 +204,7 @@ function Contacts() {
 			</div>
 			<div className="flex flex-col">
 				<p className="md:text-4xl text-2xl mt-4 ">Get in touch with me.</p>
-				<ContactForm />
+				<ContactForm className="flex flex-col space-y-1 lg:mt-10 mt-4" />
 			</div>
 
 		</div>
