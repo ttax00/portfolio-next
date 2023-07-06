@@ -8,6 +8,8 @@ import { Textarea } from "@/components/ui/textarea";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import Image from "next/image";
 
 export function DarkModeToggle() {
 	const [dark, setDark] = useState(false);
@@ -19,6 +21,27 @@ export function DarkModeToggle() {
 	</div>;
 }
 
+export function NavDropDown() {
+	return <DropdownMenu>
+		<DropdownMenuTrigger>
+			<div className="h-6 w-6 relative" >
+				<Image fill sizes="100% 100%" src="/ui/hamburg-icon.png"
+					alt="scroll down" />
+			</div>
+		</DropdownMenuTrigger>
+		<DropdownMenuContent>
+			<DropdownMenuItem>
+				<a href="#introduction"><Button variant="link">Introduction</Button></a>
+			</DropdownMenuItem>
+			<DropdownMenuItem>
+				<a href="#code-yew"><Button variant="link">Projects</Button></a>
+			</DropdownMenuItem>
+			<DropdownMenuItem>
+				<a href="#contacts"><Button variant="link">Contacts</Button></a>
+			</DropdownMenuItem>
+		</DropdownMenuContent>
+	</DropdownMenu>;
+}
 
 export function ContactForm({ className }: { className: string; }) {
 	const schema = z.object({

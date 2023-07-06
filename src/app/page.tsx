@@ -1,4 +1,4 @@
-import { DarkModeToggle, ContactForm } from "./clientComponents";
+import { DarkModeToggle, ContactForm, NavDropDown } from "./clientComponents";
 import Image from "next/image";
 import { GitHubSVG, LinkedInSVG, ObsidianSVG, TypeScriptSVG } from "./svgIcons";
 import { Button } from "@/components/ui/button";
@@ -19,6 +19,9 @@ export default function Home() {
 			<Section id="obsidian-s3">
 				<ObsidianS3 />
 			</Section>
+			<Section id="multi-projects">
+				<MultiProjects />
+			</Section>
 			<Section id="contacts">
 				<Contacts />
 			</Section>
@@ -28,7 +31,7 @@ export default function Home() {
 }
 
 function Section({ id, children }: { id: string, children: JSX.Element; }) {
-	return <section id={`${id}`} className="h-screen py-20  px-8 sm:px-12 lg:px-32">
+	return <section id={`${id}`} className="h-full md:h-screen py-20  px-8 sm:px-12 lg:px-32">
 		{children}
 	</section>;
 }
@@ -47,12 +50,15 @@ function NavBar() {
 					<Image fill sizes="100% 100%" src="/moon-svgrepo-com.svg" alt="Night mode" />
 				</div>
 			</div>
-			<div className="px-4">
-				<ul className="flex flex-row justify-center place-items-center h-full w-full space-x-8 title-color text-xl underline ">
-					<a href="#introduction" className="text-center hover:scale-110 transition">Introduction</a>
-					<a href="#code-yew" className="text-center hover:scale-110 transition" >Projects</a>
-					<a href="#contacts" className="text-center hover:scale-110 transition">Contact</a>
+			<div className="px-4 flex flex-row justify-center content-center">
+				<ul className="hidden sm:flex flex-row justify-center place-items-center h-full w-full lg:space-x-8 space-x-0 title-color text-xl underline ">
+					<a href="#introduction"><Button variant="link">Introduction</Button></a>
+					<a href="#code-yew"><Button variant="link">Projects</Button></a>
+					<a href="#contacts"><Button variant="link">Contacts</Button></a>
 				</ul>
+				<div className="sm:hidden w-full flex flex-col justify-center place-items-end">
+					<NavDropDown />
+				</div>
 			</div>
 			<div className="relative hidden sm:flex items-center justify-end">
 				<div className="mr-3 hidden md:flex">Powered by:</div>
@@ -172,7 +178,16 @@ function ObsidianS3() {
 				<Image fill sizes="100% 100%" className="object-contain" src="/obsidian-s3.gif" alt="code yew example" />
 			</div>
 		</div>
-		<DownArrow id="technologies" />
+		<DownArrow id="multi-projects" />
+	</div>;
+}
+
+function MultiProjects() {
+	return <div className="flex flex-col justify-center h-full">
+		<div className="flex flex-col lg:flex-row justify-center items-center h-full md:pt-10 pt-4">
+
+		</div>
+		<DownArrow id="contacts" />
 	</div>;
 }
 
@@ -181,20 +196,20 @@ function Contacts() {
 		<div className="w-full">
 			<p className="md:text-5xl text-3xl mt-4 text-center title-color">Contacts</p>
 		</div>
-		<div className="flex flex-col lg:flex-row lg:space-y-0 lg:space-x-16 space-x-0 space-y-8 justify-center lg:items-start items-center pt-10">
-			<div className="relative transition md:m-0 mt-4">
-				<p className="md:text-4xl text-2xl mt-4 text-center ">Info</p>
+		<div className="flex flex-col lg:flex-row lg:space-y-0 lg:space-x-16 space-x-0 space-y-8 justify-center lg:items-start items-center mt-2 md:mt-10">
+			<div className="relative transition">
+				<p className="md:text-4xl text-2xl text-center md:mt-4">Info</p>
 				<ul className="space-y-2 flex flex-col justify-center place-items-start pt-10">
 					<p>Location: Tokyo, Japan</p>
 					<p>Email: root.bachnc@gmail.com</p>
 					<ul className="flex flex-row space-x-4 items-center justify-center">
-						<li className="h-10 w-10 hover:scale-125 transition dark:invert">
+						<li className="h-6 w-6 hover:scale-125 transition dark:invert">
 							<a href="https://github.com/TechTheAwesome">
 								<GitHubSVG />
 							</a>
 
 						</li>
-						<li className="h-10 w-10 hover:scale-125 transition dark:invert">
+						<li className="h-6 w-6 hover:scale-125 transition dark:invert">
 							<a href="https://www.linkedin.com/in/nguyen-chi-bach/">
 								<LinkedInSVG />
 							</a>
@@ -203,7 +218,7 @@ function Contacts() {
 				</ul>
 			</div>
 			<div className="flex flex-col">
-				<p className="md:text-4xl text-2xl mt-4 ">Get in touch with me.</p>
+				<p className="md:text-4xl text-2xl md:mt-4">Get in touch with me.</p>
 				<ContactForm className="flex flex-col space-y-1 lg:mt-10 mt-4" />
 			</div>
 
@@ -212,7 +227,7 @@ function Contacts() {
 }
 
 function Footer() {
-	return <footer className="flex flex-col items-center justify-center bg-gray-500 dark:bg-gray-800 pb-2 pt-4">
+	return <footer className="flex flex-col items-center justify-center bg-gray-500 dark:bg-gray-800 pb-2 pt-2 md:pt-4">
 
 		<div className="mt-2">Bach Nguyen © 2023</div>
 	</footer>;
