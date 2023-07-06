@@ -1,4 +1,4 @@
-import { DarkModeToggle } from "./clientComponents";
+import { DarkModeToggle, ContactForm } from "./clientComponents";
 import Image from "next/image";
 import { GitHubSVG, LinkedInSVG, ObsidianSVG, TypeScriptSVG } from "./svgIcons";
 import { Button } from "@/components/ui/button";
@@ -92,8 +92,6 @@ function Introduction() {
 				<p className="text-3xl sm:text-5xl md:text-7xl title-color mt-10">Greetings!</p>
 				<p className="md:text-4xl mt-4">I am Bach Nguyen, a curious and passionate OSS contributor.</p>
 				<p className="text-left mt-4 text-sm md:text-xl">
-					Motivated.
-					<br />
 					Currently, I am pursuing mastery in <a href="https://www.rust-lang.org/" className="title-color font-bold">{"Rust"}</a>, a strict and memory-safe language that aligns perfectly with my interests.
 				</p>
 			</div>
@@ -182,7 +180,7 @@ function Contacts() {
 		<div className="w-full">
 			<p className="md:text-5xl text-3xl mt-4 text-center title-color">Contacts</p>
 		</div>
-		<div className="flex flex-col lg:flex-row lg:space-y-0 lg:space-x-8 space-x-0 space-y-8 justify-center lg:items-start items-center pt-10">
+		<div className="flex flex-col lg:flex-row lg:space-y-0 lg:space-x-16 space-x-0 space-y-8 justify-center lg:items-start items-center pt-10">
 			<div className="relative transition md:m-0 mt-4">
 				<p className="md:text-4xl text-2xl mt-4 text-center ">Info</p>
 
@@ -205,13 +203,8 @@ function Contacts() {
 				</ul>
 			</div>
 			<div className="flex flex-col">
-				<p className="md:text-4xl text-2xl mt-4 ">Get in touch with me!</p>
-				<form className="flex flex-col space-y-2" action="/api/contact" method="post" target="">
-					<input id="name" type="text" name="name" placeholder="Name" className="form-input" required />
-					<input id="email" type="text" name="email" placeholder="Email" className="form-input" required />
-					<textarea id="message" name="message" cols={30} rows={5} placeholder="Message" className="form-input" required></textarea>
-					<Button type="submit" id="submit">Button</Button>
-				</form>
+				<p className="md:text-4xl text-2xl mt-4 ">Get in touch with me.</p>
+				<ContactForm />
 			</div>
 
 		</div>
