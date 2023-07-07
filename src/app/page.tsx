@@ -125,7 +125,7 @@ function CodeYew() {
 						{/* eslint-disable-next-line @next/next/no-img-element */}
 						<img src="https://img.shields.io/visual-studio-marketplace/i/TechTheAwesome.rust-yew?style=for-the-badge" alt="Install count" />
 					</li>
-					<TypeScriptSVG className="h-8 w-8 hover:scale-125 transition" href="" />
+					<TypeScriptSVG className="h-8 w-8 hover:scale-125 transition" />
 					<GitHubSVG className="h-8 w-8 hover:scale-125 transition dark:invert" href="https://github.com/TechTheAwesome/code-yew-server" />
 					<li className="relative h-8 w-8 hover:scale-125 transition">
 						<a href="https://marketplace.visualstudio.com/items?itemName=TechTheAwesome.rust-yew" className="">
@@ -147,7 +147,7 @@ function ObsidianS3() {
 				<p className="md:text-4xl text-2xl mt-4">S3 attachments storage</p>
 				<p className="mt-4">An Obsidian Plugin for Streamlined Storage and Retrieval of Media Attachments on S3-Compatible Services.</p>
 				<ul className="flex flex-row flex-wrap mt-4 justify-center items-start md:items-center">
-					<TypeScriptSVG className="h-8 w-8 mr-4 hover:scale-125 transition" href="" />
+					<TypeScriptSVG className="h-8 w-8 mr-4 hover:scale-125 transition" />
 					<GitHubSVG className="h-8 w-8 mr-4 hover:scale-125 transition dark:invert" href="https://github.com/TechTheAwesome/obsidian-s3" />
 					<li className="h-8 w-8 hover:scale-125 transition">
 						<a href="https://obsidian.md">
@@ -167,14 +167,15 @@ function ObsidianS3() {
 function MultiProjects() {
 	function Cards({ title, desc, src, target, children }: { title: string, desc: string, src: string, target: string, children?: JSX.Element | JSX.Element[]; }) {
 		return <a href={target}>
-			<li className="h-[18rem] w-60 m-2 bg-slate-400 hover:bg-slate-300 transition p-2 flex flex-col justify-center items-center rounded hover:scale-105">
+			<div className="h-[18rem] w-60 m-2 bg-slate-400 hover:bg-slate-300 transition p-2 flex flex-col justify-center items-center rounded hover:scale-105">
 				<div className="h-36 w-full m-2 relative">
 					<Image fill sizes="100% 100%" className="object-contain" src={src} alt="vscode marketplace"></Image>
 				</div>
 				<p className="text-center text-xl">{title}</p>
 				<p className="text-center text-sm pb-2">{desc}</p>
 				<div className="flex flex-row justify-center w-full">{children}</div>
-			</li>
+
+			</div>
 		</a>;
 	}
 
@@ -185,23 +186,23 @@ function MultiProjects() {
 				desc="Holiday API wraper library written in rust."
 				src="/holiday-api-icon.svg"
 				target="https://github.com/TechTheAwesome/holidayapi-rust" >
-				<GitHubSVG className="h-6 w-6 relative transition dark:invert" href="" />
-				<RustSVG className="h-6 w-6 ml-2 relative transition dark:invert" href="" />
+				<GitHubSVG className="h-6 w-6 relative transition dark:invert" />
+				<RustSVG className="h-6 w-6 ml-2 relative transition dark:invert" />
 			</Cards>
 			<Cards title="HolidayAPI CLI"
 				desc="Command line interface to interact with Holiday API."
 				src="/terminal-icon.png"
 				target="https://github.com/TechTheAwesome/holidayapi-cli" >
-				<GitHubSVG className="h-6 w-6 relative transition dark:invert" href="" />
-				<RustSVG className="h-6 w-6 ml-2 relative transition dark:invert" href="" />
+				<GitHubSVG className="h-6 w-6 relative transition dark:invert" />
+				<RustSVG className="h-6 w-6 ml-2 relative transition dark:invert" />
 			</Cards>
-
 			<Cards title="Portfolio NextJS"
 				desc="Checkout this website source code!"
 				src="/website-icon.png"
 				target="https://github.com/TechTheAwesome/portfolio-next" >
-				<GitHubSVG className="h-6 w-6 relative transition dark:invert" href="" />
-				<TypeScriptSVG className="h-6 w-6 ml-2 relative transition dark:invert" href="" />
+				<GitHubSVG className="h-6 w-6 relative transition dark:invert" />
+				<TypeScriptSVG className="h-6 w-6 ml-2 relative transition dark:invert" />
+
 			</Cards>
 		</ul>
 		<DownArrow id="contacts" />
