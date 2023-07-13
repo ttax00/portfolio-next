@@ -123,7 +123,7 @@ function CodeYew() {
 				<ul className="flex flex-row flex-wrap space-x-4 mt-4 justify-center items-start md:items-center">
 					<li className="relative">
 						{/* eslint-disable-next-line @next/next/no-img-element */}
-						<img src="https://img.shields.io/visual-studio-marketplace/i/ttax00.rust-yew?style=for-the-badge" alt="Install count" />
+						<img src="https://img.shields.io/visual-studio-marketplace/i/TechTheAwesome.rust-yew?style=for-the-badge" alt="Install count" />
 					</li>
 					<TypeScriptSVG className="h-8 w-8 hover:scale-125 transition" />
 					<GitHubSVG className="h-8 w-8 hover:scale-125 transition dark:invert" href="https://github.com/ttax00/code-yew-server" />
